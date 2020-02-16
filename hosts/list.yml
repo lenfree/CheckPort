@@ -1,0 +1,14 @@
+test:
+  - port: 80
+    hosts:
+      - www.google.com
+      - www.facebook.com
+      - localhost
+  - port: 443
+    hosts:
+      - www.google.com
+      - www.facebook.com
+  - port: 8000
+    hosts:
+      - 8.8.8.8
+      - www.facebook.com

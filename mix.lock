@@ -1,0 +1,6 @@
+%{
+  "socket": {:hex, :socket, "0.3.13", "98a2ab20ce17f95fb512c5cadddba32b57273e0d2dba2d2e5f976c5969d0c632", [:mix], [], "hexpm", "f82ea9833ef49dde272e6568ab8aac657a636acb4cf44a7de8a935acb8957c2e"},
+  "table_rex": {:hex, :table_rex, "2.0.0", "712783cbc2decb4d644d2ab8ad9315294f960c41b2cf0539308164922e352084", [:mix], [], "hexpm", "b183ff68abe9ace8764af4c2828767865d2c854d1d6f8cfd3660218166ed89a1"},
+  "yamerl": {:hex, :yamerl, "0.7.0", "e51dba652dce74c20a88294130b48051ebbbb0be7d76f22de064f0f3ccf0aaf5", [:rebar3], [], "hexpm", "cb5a4481e2e2ad36db83bd9962153e1a9208e2b2484185e33fc2caac6a50b108"},
+  "yaml_elixir": {:hex, :yaml_elixir, "2.4.0", "2f444abc3c994c902851fde56b6a9cb82895c291c05a0490a289035c2e62ae71", [:mix], [{:yamerl, "~> 0.7", [hex: :yamerl, repo: "hexpm", optional: false]}], "hexpm", "4e25a6d5c873e393689c6f1062c5ec90f6cd1be2527b073178ae37eae4c78bee"},
+}
