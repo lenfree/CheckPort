@@ -20,27 +20,21 @@ defmodule CheckTcpPort do
       +------------------+------+--------+--------------+
 
   """
-  def open? do
-    {:ok, data} = get_file() |> CheckTcpPort.LoadData.read_file()
+  def open?(%{file: file, timeout: timeout})
+      when is_binary(file) and is_integer(timeout) do
+    {:ok, data} = CheckTcpPort.LoadData.read_file(file)
 
     [env] = Map.keys(data)
 
     Map.get(data, env)
     |> Enum.map(fn %{"hosts" => hosts, "port" => port} ->
-      Connect.run(hosts, port)
+      Connect.run(hosts, port, timeout)
     end)
     |> Enum.reduce(fn x, acc -> x ++ acc end)
     |> Table.generate_table(env)
   end
 
-  def get_file do
-    case System.get_env("FILE") do
-      nil ->
-        IO.puts("Error: Please specify FILE env var")
-        System.halt(1)
-
-      file ->
-        file
-    end
+  def open?(_input) do
+    :error
   end
 end

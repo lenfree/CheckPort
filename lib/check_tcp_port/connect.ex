@@ -1,13 +1,13 @@
 defmodule CheckTcpPort.Connect do
-  def run(hosts, port) do
+  def run(hosts, port, timeout) do
     hosts
-    |> Enum.map(fn host -> run_each(host, port) end)
+    |> Enum.map(fn host -> run_each(host, port, timeout) end)
   end
 
   # Private API
-  def run_each(host, port) do
+  def run_each(host, port, timeout) do
     # parametise this?
-    opts = [timeout: 10]
+    opts = [timeout: timeout]
 
     case Socket.TCP.connect(host, port, opts) do
       {:error, reason} ->

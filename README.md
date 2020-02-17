@@ -34,7 +34,8 @@ dev: # a key identifier that would print as part of table header
 ## Usage
 
 ```bash
-$ FILE=hosts/list.yml mix start
+$ mix compile && mix help
+$ mix start --timeout 3 --file ./hosts/list.yml
 
 +-------------------------------------------------+
 |               TCP Check for test                |
@@ -48,7 +49,3 @@ $ FILE=hosts/list.yml mix start
 | localhost        | 80   | closed | econnrefused |
 +------------------+------+--------+--------------+
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/check_tcp_port](https://hexdocs.pm/check_tcp_port).
