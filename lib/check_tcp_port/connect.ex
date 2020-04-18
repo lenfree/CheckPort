@@ -5,7 +5,7 @@ defmodule CheckTcpPort.Connect do
   end
 
   # Private API
-  def run_each(host, port, timeout) do
+  def run_each(host, port, timeout \\ 500) do
     # parametise this?
     opts = [timeout: timeout]
 

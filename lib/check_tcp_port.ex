@@ -26,10 +26,13 @@ defmodule CheckTcpPort do
 
     [env] = Map.keys(data)
 
-    Map.get(data, env)
-    |> Enum.map(fn %{"hosts" => hosts, "port" => port} ->
+    parse = fn %{"hosts" => hosts, "port" => port} ->
       Connect.run(hosts, port, timeout)
-    end)
+    end
+
+    Map.get(data, env)
+    |> Enum.map(&Task.async(fn -> parse.(&1) end))
+    |> Enum.map(&Task.await(&1, 10_000))
     |> Enum.reduce(fn x, acc -> x ++ acc end)
     |> Table.generate_table(env)
   end

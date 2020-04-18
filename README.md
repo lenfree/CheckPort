@@ -35,7 +35,7 @@ dev: # a key identifier that would print as part of table header
 
 ```bash
 $ mix compile && mix help
-$ mix start --timeout 3 --file ./hosts/list.yml
+$ mix start --timeout 10 --file ./hosts/list.yml
 
 +-------------------------------------------------+
 |               TCP Check for test                |

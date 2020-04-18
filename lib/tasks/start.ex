@@ -22,7 +22,7 @@ defmodule Mix.Tasks.Start do
   def parse_args(args) do
     options = %{
       :file => nil,
-      :timeout => 3
+      :timeout => 500
     }
 
     {opts, _args} =
